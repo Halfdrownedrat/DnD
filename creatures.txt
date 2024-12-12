@@ -1,0 +1,4 @@
+human
+dog
+ant
+android
