@@ -20,9 +20,6 @@ public class Creature {
     private double height;
 
 
-    // Attitude
-    private String friendliness;
-
     public Creature(String name, String creatureType) {
         this.name = name;
         this.creatureType = creatureType;
