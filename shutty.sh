@@ -13,7 +13,3 @@ git commit -m "Automated commit from script"
 git push
 
 
-# Based on: https://www.youtube.com/watch?v=hwP7WQkmECE&t=9s"
-# https://www.youtube.com/watch?v=HkdAHXoRtos&t=42s
-
-
