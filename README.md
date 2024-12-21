@@ -23,3 +23,9 @@ Support scripts for DM Stuff.
 
 - Set Frequency to different channels
 - Can play different audio clips and static noise
+
+### Markdown Notes
+- Character Stats --> Stats for Players
+- Enemies --> Enemies specific to my Stalker Campaign
+- Pflanzen --> Idea to generate different plants with effects like poisen, nutrients....
+- Weopens --> Modern Day Weopens
