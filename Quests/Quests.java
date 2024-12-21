@@ -35,15 +35,19 @@ static String[] rewards = concatenateArrays(monetary, material, experienceSkill,
 
     public static void main(String[] args) {
         System.out.println("Quests");
+        // Check if only one argumentm was given
         if (args.length == 0 || args.length >1 ) {
             System.out.println("No arguments provided");
         }else{
+            // Loop through the wanted amount
             int amount = Integer.parseInt(args[0]);
             for (int i = 0; i < amount; i++) {
                 CreateQuest();              
             }
         }
     }
+
+    // Merge grouped strigns into one string. Is used to create the input data
     public static String[] concatenateArrays(String[]... arrays) {
         int length = 0;
         for (String[] array : arrays) {
@@ -58,6 +62,8 @@ static String[] rewards = concatenateArrays(monetary, material, experienceSkill,
         }
         return result;
     }
+
+    // Create Quest and print it to console
     public static void CreateQuest(){
         String action = actions[(int) (Math.random() * actions.length)];
         String loc = locations[(int) (Math.random() * locations.length)];

@@ -774,4 +774,26 @@
          // until all the sound leaves the speaker.
          StdAudio.drain();
      }
+
+     // Custom Stuff
+     //
+     //
+     public static double getWavFileDuration(File file) throws UnsupportedAudioFileException, IOException {
+        // Open the audio file
+        try (AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file)) {
+
+            // Get the format of the audio file
+            AudioFormat format = audioInputStream.getFormat(); // Format is only .wav, so it could be done more effictly
+
+            // Get the number of frames in the audio file
+            long frames = audioInputStream.getFrameLength();
+
+            // Calculate the duration in seconds
+            float frameRate = format.getFrameRate();
+            double durationInSeconds = (frames / frameRate);
+
+            return durationInSeconds;
+        }
+    }
+
  }
