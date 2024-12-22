@@ -48,26 +48,26 @@ public class radio {
         MyFrame frame = new MyFrame();
         frame.setKeyInputListener(keyChar -> {
             switch (keyChar) {
-                case 'q':
+                case 'q' -> {
                     frequency -= 10;
                     System.out.println(frequency);
-                    break;
-                case 'e':
+                }
+                case 'e' -> {
                     frequency += 10;
-                     System.out.println(frequency);
-                    break;
-                default:
-                    System.out.println("Wrong Input: " + keyChar);
-                    break;
+                    System.out.println(frequency);
+                }
+                default -> System.out.println("Wrong Input: " + keyChar);
             }
             CheckFrequency();
         });
     }
     
     public static void homeScreen(Scanner scanner) {
+        clearScreen();
         System.out.println("------------------------------------------------------------------------");
         System.out.println("Current frequency: " + frequency);
         System.out.println("Press 0 to set frequency, 1 to dial frequency, or any other key to exit");
+        System.out.println("------------------------------------------------------------------------");
         CheckFrequency();
 
         int mode = scanner.nextInt();
@@ -124,7 +124,7 @@ public class radio {
         }
     }
 
-// Skips to the specific timestamp in seconds, modulo the file's length to loop
+// Skips to the specific timestamp in seconds, modulo the file's length (Basicly a fake loop, each radio station is just a long .wav files)
 // Might be good to have this in my modified StdAudio.java so I can use it in other projects
 // Currently creates ungodly mixes since it can play every audio channel at once
     public static void skipSeconds(int secs, String filePath) throws UnsupportedAudioFileException {
@@ -152,6 +152,13 @@ public class radio {
             clip.start(); // Start playback from the new position
         } catch (IOException | LineUnavailableException e) {}
     }
+
+    // Should clear the console
+    // Does not work on Windows, IDE Enviremont and some other things, Console has to support ANSCI escape codes
+    public static void clearScreen() {  
+        System.out.print("\033[H\033[2J");  
+        System.out.flush();  
+    }  
     
 }
 // Count Up every second using the Runnable interface, no clue how exactly that works tbh
