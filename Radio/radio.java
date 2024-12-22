@@ -8,6 +8,12 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.DataLine;
+import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 
@@ -77,11 +83,13 @@ public class radio {
         // StdAudio.play(musicPath);
         // Play In FG
         StdAudio.stopInBackground();// Stop the file to avoid ungodly mix of all audio files, not the perfect solution
-        StdAudio.playInBackground(musicPath);// Plays file in background, allows interacting while file is running
+        //StdAudio.playInBackground(musicPath);// Plays file in background, allows interacting while file is running
         //Skip some seconds based on the current time mod length of the clip
         try {
             skipSeconds(count, musicPath);
-        } catch (UnsupportedAudioFileException e) {}
+        } catch (UnsupportedAudioFileException e) {
+            // Could do the normal play logic here if it sometimes fails, not sure though
+        }
     }
     
     public static void Ton(int multi){
@@ -116,17 +124,33 @@ public class radio {
         }
     }
 
+// Skips to the specific timestamp in seconds, modulo the file's length to loop
+// Might be good to have this in my modified StdAudio.java so I can use it in other projects
+// Currently creates ungodly mixes since it can play every audio channel at once
     public static void skipSeconds(int secs, String filePath) throws UnsupportedAudioFileException {
         double length = 1;
         File file = new File(filePath); // Convert Filepath to File Object/Variable?!
+        
         try {
             length = StdAudio.getWavFileDuration(file); // Get the length of the audio file in seconds
         } catch (UnsupportedAudioFileException | IOException e) {}
         
-        int microSec = secs * 1000000; // Convert to micro Seconds
-        double pos = microSec % length;
-        // Code for Setting to current pos
-        
+        // Calculate the exact position in the file's duration
+        double pos = secs % length;  // Use modulus to keep within the length of the audio
+        long microSec = (long)(pos * 1000000); // Convert to microseconds
+
+        // Start playback at the calculated position
+        try {
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+            AudioFormat format = audioStream.getFormat();
+            long skipBytes = (long)(microSec * format.getFrameSize() * format.getFrameRate() / 1000000);
+            audioStream.skip(skipBytes); // Skip to the calculated position in the stream
+            // Set up the clip and start playback from this point
+            DataLine.Info info = new DataLine.Info(Clip.class, format);
+            Clip clip = (Clip) AudioSystem.getLine(info);
+            clip.open(audioStream);
+            clip.start(); // Start playback from the new position
+        } catch (IOException | LineUnavailableException e) {}
     }
     
 }
