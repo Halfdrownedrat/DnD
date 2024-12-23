@@ -18,6 +18,9 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 
 public class radio {
+    static Clip currentClip = null;
+    static String oldFile = "DoNotExist"; // Setting it to null causes problems becouse comparing with null does not work
+
     // count variable tracks time. The tracking itself is done in the class CountUP
     static int count;
     public static void SetCount(int counterFromCount){
@@ -93,9 +96,16 @@ public class radio {
     }
     
     public static void Ton(int multi){
+        // Stop current file
+        oldFile = "DoNotExists";
+        if (currentClip != null) {
+            currentClip.stop();
+            currentClip.close();
+        }
+        // Generate sound
         int sps = 44100;
         int hz = 110 * multi;
-        double duration = 3.0;
+        double duration = 1.0;
         int N = (int) (sps * duration);
         double[] a = new double[N+1];   
         for (int i = 0; i <= N; i++){
@@ -147,9 +157,23 @@ public class radio {
             audioStream.skip(skipBytes); // Skip to the calculated position in the stream
             // Set up the clip and start playback from this point
             DataLine.Info info = new DataLine.Info(Clip.class, format);
+
+            // Check if old and new clip are the same, if not, close old one
+            if(currentClip != null && !oldFile.equals(filePath)){
+                System.out.println("Other Channel closed");
+                currentClip.stop();
+                currentClip.close();
+            }
+            // Starts up new clip and updates old variables
             Clip clip = (Clip) AudioSystem.getLine(info);
-            clip.open(audioStream);
-            clip.start(); // Start playback from the new position
+            if (!oldFile.equals(filePath)){
+                clip.open(audioStream);
+                clip.start(); // Start playback from the new position
+                currentClip = clip;
+                oldFile = filePath;
+            }   
+           
+
         } catch (IOException | LineUnavailableException e) {}
     }
 
