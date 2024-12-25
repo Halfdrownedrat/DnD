@@ -16,18 +16,13 @@ Ok, ich brauche Waffen für die ich dann Stats organisiere. Wenn ihr denkt das i
 
 ## Fernkampf Modern
 ### Pistole
-- Beretta 92FS
-- ColtM1811
-- Glock 17 Gen4
-- Ruger Mk III
-- Smith & Wesson 686
+
 
 
 ### Schrotflinte
 
 ### SMG
-- Heckler & Koch MP5A2
-- MAC-10
+
 
 ### Sturmgewehr
 
@@ -36,9 +31,7 @@ Ok, ich brauche Waffen für die ich dann Stats organisiere. Wenn ihr denkt das i
 ### Gewehr Gewehr
 
 ### Scharfschützengewehr
-- Remington Model 700
-- Sako 85
-- 
+
 
 ### Granatenwerfer/ Raketenwerfer
 
