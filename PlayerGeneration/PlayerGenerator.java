@@ -52,7 +52,7 @@ public class PlayerGenerator {
                     case 3 ->{
                         // Explanation for data
                         clearScreen();
-                        System.out.println(textBlock());
+                        System.out.println(textBlock(0));
                     }
                     default -> {
                         // Exit the programm
@@ -63,8 +63,10 @@ public class PlayerGenerator {
             }
         }
     }
-    public static String textBlock(){
-        return """
+    public static String textBlock(int block){
+        switch (block) {
+            case 0 -> {
+                return """
                 STR: Breaking things, lifting heavy objects and using meleeweopens...
                 Dex: Hitting ranged targets, lockpicking, balancing on a ledge...
                 CON: Sprinting for long times, holding breath, resistance to poisen...
@@ -72,14 +74,20 @@ public class PlayerGenerator {
                 WIS: Detecting things, Cleric spells, (In german it would be closer to "Warnehmung")...
                 CHA: Charming opponents, trading, negotiation...
                 ---
-                AC : Blocking/ Evading incoming damage. (Armor Class) 
+                AC : Blocking/ Evading incoming damage. (Armor Class)
                 ---
                 Difference Gender <-> Sex: Sex is the biological identity. Gender what you identify as. In most cases that will be the same.
                 Former Profession: The fictional job you had before the events of the campaign started
                 Familiy Status: Married, parents alive, stuff like that
                 Background: All the lore related things that dont fit anywhere else.
                 """;
-
+            }
+            default -> {
+            System.out.println("");
+            return "";
+            }
+        }
+        
     }
 
     public static void clearScreen() {
@@ -97,6 +105,7 @@ public class PlayerGenerator {
     }
 
     public static void createCharacter(Scanner scanner) {
+        System.out.println("Start the tooltips from the menu if you dont now what any of thsi means. To Stop the Programm press STRG-C or close the console (not recommendet))");
         // Getting all the inputs
         for (int i = 0; i < DiceStats.length; i++) {
             System.out.println("Please Enter your value for: " + DiceStats[i]);
