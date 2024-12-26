@@ -19,7 +19,7 @@ public class PlayerGenerator {
     public static void menu() {
         try (Scanner scanner = new Scanner(System.in)) {
             while (true) {
-                System.out.println("Enter 0 to write the output to a file. Press 1 to run the program again. Anything else to exit.");
+                System.out.println("0: Write ouput to file.1: Start again.2: Display character infos.3: Get tips/ help. Anything else to exit.");
                 int choice = -1;
                 if (scanner.hasNextInt()) {
                     choice = scanner.nextInt();
@@ -34,20 +34,52 @@ public class PlayerGenerator {
 
                 switch (choice) {
                     case 0 -> {
+                        // Write current Character to the file output.md
                         writeFile();
                         return; // Exit the program after writing to file
                     }
                     case 1 -> {
+                        // Create new character destroying the old one (the file doesnt get overwritten yet)
                         clearScreen();
                         createCharacter(scanner);
                     }
+                    case 2 -> {
+                        // Print current temporary values
+                        displayCharacterInfo();
+                        menu();
+
+                    }
+                    case 3 ->{
+                        // Explanation for data
+                        clearScreen();
+                        System.out.println(textBlock());
+                    }
                     default -> {
+                        // Exit the programm
                         System.out.println("Exiting...");
                         return;
                     }
                 }
             }
         }
+    }
+    public static String textBlock(){
+        return """
+                STR: Breaking things, lifting heavy objects and using meleeweopens...
+                Dex: Hitting ranged targets, lockpicking, balancing on a ledge...
+                CON: Sprinting for long times, holding breath, resistance to poisen...
+                INT: Magic, Castign spells...
+                WIS: Detecting things, Cleric spells, (In german it would be closer to "Warnehmung")...
+                CHA: Charming opponents, trading, negotiation...
+                ---
+                AC : Blocking/ Evading incoming damage. (Armor Class) 
+                ---
+                Difference Gender <-> Sex: Sex is the biological identity. Gender what you identify as. In most cases that will be the same.
+                Former Profession: The fictional job you had before the events of the campaign started
+                Familiy Status: Married, parents alive, stuff like that
+                Background: All the lore related things that dont fit anywhere else.
+                """;
+
     }
 
     public static void clearScreen() {
@@ -89,6 +121,7 @@ public class PlayerGenerator {
     }
 
     public static void displayCharacterInfo() {
+        clearScreen();
         System.out.println("Your values are: \n" + Arrays.toString(DiceStats) + "\n" + Arrays.toString(DiceStats_Input));
         System.out.println("Your General Info is \n" + Arrays.toString(GeneralInfo) + "\n" + Arrays.toString(GeneralInfo_Input));
         System.out.println("Your Background Info is: \n" + Arrays.toString(BackgroundInfo) + "\n" + Arrays.toString(BackgroundInfo_Input));

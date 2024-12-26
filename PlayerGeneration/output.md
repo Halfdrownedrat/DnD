@@ -2,22 +2,22 @@
 
 ## Dice Stats:
 STR: 15
-DEX: 23
-CON: 125
-INT: 12
-WIS: 5
-CHA: 123
-AC: 123
+DEX: 20
+CON: 12
+INT: 20
+WIS: 15
+CHA: 20
+AC: 5
 
 ## General Info:
 Name: Smeik
-Gender: oi
-Sex: oi
-Age: oi
-Height: oi
-Weight: asd
+Gender: male
+Sex: male
+Age: 35
+Height: 1.60
+Weight: 85
 
 ## Background Info:
-Former Profession: Dumb
-Family status: sd
-Background: sd
+Former Profession: merc
+Family status: orphan
+Background: idk
