@@ -1,0 +1,216 @@
+{
+  "main": {
+    "id": "e6518d8186f7e2a3",
+    "type": "split",
+    "children": [
+      {
+        "id": "1223ce1744694c5f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9eefe57bf2319785",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Character Sheet.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Character Sheet"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "071f01afa02f08ff",
+    "type": "split",
+    "children": [
+      {
+        "id": "b4ebe43816fbfc5a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8bac1018676feb52",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "48162a3b90580a8e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "3518dde9cd260777",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "25f976266687b62c",
+    "type": "split",
+    "children": [
+      {
+        "id": "7b3302920362ffa8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b3c46279984792d3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Michel.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Michel"
+            }
+          },
+          {
+            "id": "ed4c52fd1262f97d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Michel.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Michel"
+            }
+          },
+          {
+            "id": "299c2e31be68bc14",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "6fe2dc8c480784c8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Michel.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Michel"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "audio-recorder:Start/stop recording": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
+    }
+  },
+  "active": "9eefe57bf2319785",
+  "lastOpenFiles": [
+    "Griechenland/Missions.md",
+    "Ideen/Mögliche Kampagnen.md",
+    "Griechenland/Systems/Item List.md",
+    "Griechenland/Systems/Combat and Death.md",
+    "Griechenland/Charaktere/Anneke.md",
+    "Ideen/Sc-Fi Kampagne.md",
+    "Griechenland/Arena.md",
+    "Ideen/Doomsday Trigger Kampagne.md",
+    "Ideen/Heiliger Krieg Kampagne.md",
+    "Ideen/Inselexperiment MKII Kampagne.md",
+    "Rulebooks/Shadowdark/Shadowdark Rulebook.pdf",
+    "Südwärts/Characters/Tom.md",
+    "Südwärts/Characters/Sven.md",
+    "Südwärts/Characters/Erik.md",
+    "Excalidraw/Drawing 2024-11-29 20.25.33.excalidraw.md",
+    "Südwärts/Characters/Benni.md",
+    "Excalidraw",
+    "Südwärts/BC Negative Effect.md",
+    "Griechenland/Combat Maps/Drawing 2024-10-30 12.13.53.excalidraw.md",
+    "Griechenland/Research List.md",
+    "Griechenland/NPC´s.md",
+    "Character Sheet.md",
+    "Rest/NPC.md",
+    "Riddles/DnD Book of Challanges (Old).pdf",
+    "Rest",
+    "Rest/Poetry.md",
+    "Movie List.md",
+    "Untitled.md",
+    "Südwärts/City.jpg",
+    "Südwärts/Gateway.jpg",
+    "Südwärts/Story.md",
+    "Südwärts/Trader.jpg",
+    "Südwärts/Battlemap/Lords Mansion.md",
+    "Südwärts/Angel.jpg",
+    "Südwärts/Baron.jpg",
+    "Campaigns/Südwärts/output (2).jpg",
+    "Campaigns/Südwärts/output (3).jpg",
+    "Südwärts/Battlemap/Seadragon.png",
+    "Südwärts/Battlemap/map.png",
+    "Player/Oskar Kampagne.pdf",
+    "Südwärts/Battlemap/Caves.svg",
+    "Griechenland/Combat Maps",
+    "Griechenland/Systems",
+    "Griechenland/Charaktere",
+    "Campaigns/Griechenland/Unbenannt.canvas",
+    "Character Sheet.pdf"
+  ]
+}
